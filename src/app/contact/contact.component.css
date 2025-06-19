@@ -1,0 +1,37 @@
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.2);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .social-links {
+    flex-direction: row;
+    justify-content: center; /* Align the icons in the center */
+        gap: 10px; /* Reduce space between icons on mobile */
+
+  }
+
+  .social-link img {
+    width: 25px;
+    height: 25px;
+  }
+}

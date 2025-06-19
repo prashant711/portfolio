@@ -1,0 +1,54 @@
+<!-- <header class="app-header">
+
+  <nav class="navbar">
+    <button class="nav-toggle" (click)="toggleMenu()">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="nav-left ">
+      <span class="logo">
+        <i class="bi bi-wind"></i>
+        <img src="assets/image1.jpg" width="60px" alt="">
+      </span>
+    </div>
+
+
+
+    <div class="nav-right" [class.open]="menuOpen">
+      <a routerLink="/Home" (click)="menuOpen = false" routerLinkActive="active">Home</a>
+      <a routerLink="/about" (click)="menuOpen = false" routerLinkActive="active">About</a>
+      <a routerLink="/projects" (click)="menuOpen = false" routerLinkActive="active">Projects</a>
+      <a routerLink="/contact" (click)="menuOpen = false" routerLinkActive="active">Contact</a>
+    </div>
+  </nav>
+</header> -->
+<!-- <header class="app-header">
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="nav-toggle" (click)="toggleMenu()">
+        &#9776;
+      </button>
+
+    </div>
+
+    <div class="nav-right" [class.open]="menuOpen">
+      <a routerLink="/Home" (click)="menuOpen = false" routerLinkActive="active">Home</a>
+      <a routerLink="/about" (click)="menuOpen = false" routerLinkActive="active">About</a>
+      <a routerLink="/projects" (click)="menuOpen = false" routerLinkActive="active">Projects</a>
+      <a routerLink="/contact" (click)="menuOpen = false" routerLinkActive="active">Contact</a>
+    </div>
+  </nav>
+</header> -->
+<header class="app-header">
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="nav-toggle" (click)="toggleMenu()">&#9776;</button>
+    </div>
+
+    <div class="nav-right" [class.open]="menuOpen">
+      <a (click)="scrollTo('home')">Home</a>
+      <a (click)="scrollTo('about')">About</a>
+      <a (click)="scrollTo('projects')">Projects</a>
+      <a (click)="scrollTo('contact')">Contact</a>
+    </div>
+  </nav>
+</header>
