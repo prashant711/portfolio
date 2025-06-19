@@ -12,8 +12,8 @@ import Swal from 'sweetalert2';
 })
 export class ContactComponent {
   emails: string[] = [
-    'gururajchoudri55@gmail.com',
-    'rajuchoudri5@gmail.com'
+    'pprashant711@gmail.com',
+    'prashantamazeinc@gmail.com'
   ];
 
   formData = {

@@ -1,3 +1,4 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import AOS from 'aos';
@@ -7,64 +8,104 @@ import AOS from 'aos';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+  styleUrl: './projects.component.css',
+  animations: [
+    trigger('fadeInOut', [
+      state('in', style({ opacity: 1, height: '*', padding: '*', margin: '*' })),
+      state('out', style({ opacity: 0, height: '0px', padding: '0px', margin: '0px' })),
+      transition('in <=> out', animate('300ms ease-in-out'))
+    ])
+  ]
 })
 export class ProjectsComponent {
   projects = [
-   
     {
-      title: 'Core HR - Payroll Management System',
+      title: '"Digi Office" (HR management and payroll product)"',
       icon: 'bi-person-badge-fill',
       shortDesc: 'HR and payroll automation using Angular, .NET, and MS SQL Server.',
-      fullDesc: `Developed a Core HR module integrated with Digi Office to automate payroll processing, attendance tracking, leave management, OT calculations, employee onboarding, separation, and reporting. 
-  • Used Angular, MS SQL Server, and REST APIs to enable real-time HR operations and seamless workforce management.
-  • Developed dynamic UI components using Angular to manage payroll activities such as salary calculations, attendance tracking, and leave management, providing a seamless user experience for HR and employees.
-  • Designed and optimized complex SQL queries to automate payroll processes, enabling accurate real-time calculations for salaries, taxes, and deductions based on attendance and leave data.
-  • Built and integrated RESTful APIs with MS SQL Server for secure and efficient payroll data management, ensuring smooth communication between the frontend and backend systems for real-time payroll updates and reporting.`,
-      github: 'https://github.com/yourusername/hr-payroll-system'
+      fullDesc: `
+        <p>Designed and developed a comprehensive HR management and payroll system, <strong>"Digi Office"</strong>, to streamline HR processes and payroll computation for organizations.</p>
+        <p>The system comprises multiple modules, including:</p>
+        <ul>
+          <li><strong>Attendance Management:</strong> Tracking employee attendance, including regular hours, overtime, and absences</li>
+          <li><strong>Overtime Management:</strong> Calculating and approving overtime requests</li>
+          <li><strong>Leaves Management:</strong> Tracking and approving employee leave requests</li>
+          <li><strong>Loan Management:</strong> Managing employee loan requests and repayments</li>
+          <li><strong>Payroll Computation:</strong> Automating payroll processing, including salary calculations, deductions, and tax compliance</li>
+        </ul>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+          <li>Modular design allowing easy maintenance and updates</li>
+          <li>User-friendly interface for easy navigation and data entry</li>
+          <li>Automated workflows for attendance, leave, and loan requests</li>
+          <li>Customizable reports and analytics for HR and management insights</li>
+          <li>Integration with existing HR systems and databases</li>
+        </ul>
+      `,
+      github: 'https://github.com/yourusername/hr-payroll-system',
+      showFull: false
     },
     {
-      title: 'Voiladoc Healthcare App',
-      icon: 'bi-heart-pulse-fill',
-      shortDesc: '24/7 healthcare app with Angular frontend, .NET APIs, and MS SQL Server.',
-      fullDesc: `Voiladoc is a healthcare application that connects licensed professionals 24/7. Patients can consult doctors, request home visits, manage medical records securely, and explore a marketplace for healthcare services (hospitals, pharmacies, diagnostics, nurses, insurance).
-  • Built dynamic UI components in Angular to facilitate doctor appointments, home visits, and marketplace browsing, ensuring a seamless cross-device experience.
-  • Optimized SQL queries for efficient data retrieval and manipulation, enhancing the management of healthcare providers, appointments, and patient records.
-  • Developed and integrated RESTful APIs with MS SQL Server to securely manage patient records, appointments, and provider communications in real time.
-  • Designed and implemented APIs in .NET, ensuring smooth data exchange between the front end and backend.
-  • Enforced data security measures to comply with healthcare regulations, safeguarding patient privacy.`,
-      github: 'https://github.com/yourusername/voiladoc-healthcare-app'
+      title: 'E-commerce Web Application for online purchase  ',
+      icon: 'bi-cart-fill',
+      shortDesc: 'Scalable e-commerce platform with Angular, .NET Core, and SQL Server.',
+      fullDesc: `
+        <p><strong>Project:</strong> E-commerce Web Application</p>
+        <p><strong>Technologies:</strong> Angular, JavaScript, TypeScript, SQL Server, RESTful API, .NET Core</p>
+        <p><strong>Description:</strong></p>
+        <p>Designed and developed a scalable e-commerce web application using Angular, JavaScript, and TypeScript. The application features a responsive UI/UX design, allowing users to browse and purchase products seamlessly.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+          <li>Implemented a RESTful API using .NET Core to manage product catalog, orders, and customer data</li>
+          <li>Integrated API with Angular frontend, utilizing TypeScript for type safety and maintainability</li>
+          <li>Utilized SQL Server to design and manage database schema, ensuring data consistency and performance</li>
+          <li>Implemented authentication and authorization using JSON Web Tokens (JWT)</li>
+          <li>Developed a responsive and mobile-friendly UI/UX design, ensuring a smooth user experience across devices</li>
+        </ul>
+      `,
+      github: 'https://github.com/yourusername/ecommerce-web-app',
+      showFull: false
     },
     {
-      title: 'Learning Management System (LMS)',
-      icon: 'bi-mortarboard-fill',
-      shortDesc: 'Role-based training platform with assessments and certifications.',
-      fullDesc: `Designed and implemented a Learning Management System supporting Admin, Manager, Trainer, and Employee roles.
-    • Admin creates categories, staff profiles, trainers, and topics, then assigns topics to trainers.
-    • Trainers create detailed content and assessments tied to their assigned topics.
-    • Managers assign training to employees who accept, complete training, and attempt assessments.
-    • Implemented dynamic certificate generation on successful completion of assessments.
-    • Built using Angular for front-end, .NET for backend logic, and MS SQL Server for data handling.
-    • Features include role-based dashboards, assessment tracking, certificate generation, and training history overview.`,
-      github: 'https://github.com/yourusername/learning-management-system'
-    },
-    {
-      title: 'Performance Management System (PMS)',
-      icon: 'bi-graph-up-arrow',
-      shortDesc: 'End-to-end appraisal and KPI tracking with goal assignment.',
-      fullDesc: `Developed a Performance Management System featuring appraisal cycle management, goal setting, and rating workflows.
-    • HR configures appraisal cycles, KPIs, core values, and organizational goals.
-    • Managers assign employee-specific goals and initiate the self-assessment process.
-    • Employees provide self-ratings, followed by manager ratings and final HR review.
-    • Integrated PIP (Performance Improvement Plan) workflow for low-rated employees (<2) with final rating submission.
-    • Built using Angular for UI, .NET backend for business logic, and MS SQL Server for data storage and workflow automation.
-    • Role-based controls, approval tracking, and notification systems included to streamline appraisals.`,
-      github: 'https://github.com/yourusername/performance-management-system'
+      title: 'FMS - Facility Management System',
+      icon: 'bi-building-fill-gear',
+      shortDesc: 'Streamlined facility operations with modules for asset, tenant, vendor, and energy management.',
+      fullDesc: `
+        <p><strong>Project:</strong> FMS - Facility Management System</p>
+        <p><strong>Technologies:</strong> Angular, JavaScript, TypeScript, SQL Server, RESTful API, .NET Core</p>
+        <p><strong>Description:</strong></p>
+        <p>Designed and developed a comprehensive Facility Management System, <strong>"FMS"</strong>, to streamline facility-related operations and workflows for buildings. The system features:</p>
+        <ul>
+          <li><strong>Asset Management:</strong> Tracking and managing facility assets, including equipment and furniture</li>
+          <li><strong>Maintenance Management:</strong> Scheduling and tracking maintenance requests and work orders</li>
+          <li><strong>Space Management:</strong> Managing facility space, including room bookings and allocations</li>
+          <li><strong>Energy Management:</strong> Monitoring and optimizing energy consumption and costs</li>
+          <li><strong>Helpdesk Management:</strong> Managing facility-related requests and issues</li>
+          <li><strong>Tenant Management:</strong> Managing tenant information, leases, and rent payments</li>
+          <li><strong>Vendor Management:</strong> Managing vendor information, contracts, and inventory supplies</li>
+          <li><strong>Announcement Notification:</strong> Sending notifications to tenants, vendors, and facility staff</li>
+          <li><strong>Reporting and Analytics:</strong> Providing insights into facility performance and trends</li>
+        </ul>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+          <li>User-friendly interface for easy facility, asset, tenant, and vendor management</li>
+          <li>Automated workflows for maintenance requests, work orders, energy monitoring, and rent payments</li>
+          <li>Customizable reporting and analytics for facility optimization</li>
+          <li>Mobile accessibility for on-the-go facility management</li>
+          <li>Email and SMS notifications for announcements, rent reminders, and maintenance schedules</li>
+        </ul>
+      `,
+      github: 'https://github.com/yourusername/facility-management-system',
+      showFull: false
     }
     
     
   ];
-
+  
+  toggleDetails(index: number): void {
+    this.projects[index].showFull = !this.projects[index].showFull;
+  }
+  
   ngOnInit() {
     AOS.init({
       duration: 0.1,  // Animation duration
